@@ -1,12 +1,8 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@tanstack/react-router";
 import { Maximize2 } from "lucide-react";
-import homeIcon from "@/assets/home.png.asset.json";
-import vehiclesIcon from "@/assets/vehicles.png.asset.json";
-import licenceIcon from "@/assets/licence.png.asset.json";
-import paymentsIcon from "@/assets/payments.png.asset.json";
-import profileIcon from "@/assets/profile.png.asset.json";
 import registeredVehiclesIcon from "@/assets/registered-vehicles.png.asset.json";
 import demeritIcon from "@/assets/demerit.png.asset.json";
+import { BottomNav } from "@/components/bottom-nav";
 
 
 export const Route = createFileRoute("/")({
@@ -31,13 +27,6 @@ export const Route = createFileRoute("/")({
   component: Index,
 });
 
-const navItems = [
-  { label: "Home", icon: homeIcon.url, active: true },
-  { label: "Vehicles", icon: vehiclesIcon.url, active: false },
-  { label: "Licence", icon: licenceIcon.url, active: false },
-  { label: "Payments", icon: paymentsIcon.url, active: false },
-  { label: "Profile", icon: profileIcon.url, active: false },
-];
 
 function Index() {
   return (
@@ -59,36 +48,18 @@ function Index() {
 
         <div className="flex-1" />
 
-        <button
-          className="relative -mx-5 -mb-28 mt-10 w-[calc(100%+40px)] overflow-hidden rounded-t-2xl p-6 pb-24 text-left text-licence-foreground"
+        <Link
+          to="/licence"
+          className="relative -mx-5 -mb-28 mt-10 block w-[calc(100%+40px)] overflow-hidden rounded-t-2xl p-6 pb-24 text-left text-licence-foreground"
           style={{ backgroundImage: "var(--gradient-licence)" }}
         >
           <Maximize2 className="absolute right-6 top-6 h-5 w-5 opacity-90" strokeWidth={2.5} />
           <p className="text-2xl font-semibold">My licence</p>
           <p className="mt-1 text-lg font-medium opacity-85">Tap to view licence</p>
-        </button>
+        </Link>
       </main>
 
-
-      <nav className="fixed inset-x-0 bottom-0 bg-card">
-        <ul className="mx-auto flex max-w-md items-center justify-between px-3 pt-3 pb-6">
-          {navItems.map(({ label, icon, active }) => (
-            <li key={label} className="w-16">
-              <button
-                className={
-                  active
-                    ? "flex w-full flex-col items-center gap-2 text-primary"
-                    : "flex w-full flex-col items-center gap-2 text-foreground/70"
-                }
-                aria-current={active ? "page" : undefined}
-              >
-                <img src={icon} alt="" className="h-5 w-auto" />
-                <span className={active ? "text-sm font-semibold" : "text-sm"}>{label}</span>
-              </button>
-            </li>
-          ))}
-        </ul>
-      </nav>
+      <BottomNav />
     </div>
   );
 }
