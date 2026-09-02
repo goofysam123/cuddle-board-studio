@@ -15,21 +15,16 @@ export function VehiclesIcon({ className }: IconProps) {
   return (
     <svg viewBox="0 0 52 32" fill="none" className={className} aria-hidden="true">
       <path
-        d="M4 21.5h27M6.5 21.5c0-4.2 1.2-6.6 2.6-8.2C10.7 11.5 13.6 10.5 18 10.5h4.6c2.4 0 3.9.5 5.4 1.7l3.5 3"
-        stroke="currentColor"
-        strokeWidth="2"
-        strokeLinecap="round"
-        strokeLinejoin="round"
+        d="M6 16.5c0-1.7 1.3-3 3-3h1l2.2-3.6C13 8.6 14.6 8 16.8 8h6.4c2.2 0 3.8.6 4.6 1.9L30 13.5h1c1.7 0 3 1.3 3 3v3h-2v2h-2.4v-2H10.4v2H8v-2H6v-3Z"
+        fill="currentColor"
       />
       <path
-        d="M6.5 21.5v2.2M30 21.5v2.2"
-        stroke="currentColor"
-        strokeWidth="2"
-        strokeLinecap="round"
+        d="M13.6 10.4 12 13.5h16l-1.6-3.1c-.4-.7-1.3-1-2.6-1h-7.4c-1.3 0-2.2.3-2.6 1Z"
+        fill="#fff"
       />
-      <circle cx="12" cy="21.5" r="2.4" fill="currentColor" />
-      <circle cx="25" cy="21.5" r="2.4" fill="currentColor" />
-      <path d="M34 26V6l12 20H34Z" className="text-primary" fill="currentColor" />
+      <circle cx="13" cy="20.5" r="2.6" fill="#fff" />
+      <circle cx="27" cy="20.5" r="2.6" fill="#fff" />
+      <path d="M36 27V4l14 23H36Z" className="text-primary" fill="currentColor" />
     </svg>
   );
 }
