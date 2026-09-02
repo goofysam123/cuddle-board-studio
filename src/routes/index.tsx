@@ -1,12 +1,8 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@tanstack/react-router";
 import { Maximize2 } from "lucide-react";
-import homeIcon from "@/assets/home.png.asset.json";
-import vehiclesIcon from "@/assets/vehicles.png.asset.json";
-import licenceIcon from "@/assets/licence.png.asset.json";
-import paymentsIcon from "@/assets/payments.png.asset.json";
-import profileIcon from "@/assets/profile.png.asset.json";
 import registeredVehiclesIcon from "@/assets/registered-vehicles.png.asset.json";
 import demeritIcon from "@/assets/demerit.png.asset.json";
+import { BottomNav } from "@/components/bottom-nav";
 
 
 export const Route = createFileRoute("/")({
