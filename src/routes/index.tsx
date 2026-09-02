@@ -1,6 +1,12 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { Car, CircleDollarSign, CreditCard, Maximize2, User } from "lucide-react";
-import { DemeritIcon, HomeMarkIcon, VehiclesIcon } from "@/components/app-icons";
+import { Maximize2 } from "lucide-react";
+import homeIcon from "@/assets/home.png.asset.json";
+import vehiclesIcon from "@/assets/vehicles.png.asset.json";
+import licenceIcon from "@/assets/licence.png.asset.json";
+import paymentsIcon from "@/assets/payments.png.asset.json";
+import profileIcon from "@/assets/profile.png.asset.json";
+import registeredVehiclesIcon from "@/assets/registered-vehicles.png.asset.json";
+import demeritIcon from "@/assets/demerit.png.asset.json";
 
 
 export const Route = createFileRoute("/")({
@@ -26,11 +32,11 @@ export const Route = createFileRoute("/")({
 });
 
 const navItems = [
-  { label: "Home", icon: HomeMarkIcon, active: true },
-  { label: "Vehicles", icon: Car, active: false },
-  { label: "Licence", icon: CreditCard, active: false },
-  { label: "Payments", icon: CircleDollarSign, active: false },
-  { label: "Profile", icon: User, active: false },
+  { label: "Home", icon: homeIcon.url, active: true },
+  { label: "Vehicles", icon: vehiclesIcon.url, active: false },
+  { label: "Licence", icon: licenceIcon.url, active: false },
+  { label: "Payments", icon: paymentsIcon.url, active: false },
+  { label: "Profile", icon: profileIcon.url, active: false },
 ];
 
 function Index() {
@@ -41,12 +47,12 @@ function Index() {
 
         <div className="mt-10 space-y-7">
           <button className="w-full rounded-2xl border border-border/70 bg-card px-8 py-10 text-left shadow-[var(--shadow-card)] transition-transform active:scale-[0.99]">
-            <DemeritIcon className="h-6 w-12 text-foreground/70" />
+            <img src={demeritIcon.url} alt="" className="h-8 w-auto" />
             <p className="mt-6 text-[19px] font-semibold">Demerit point balance</p>
           </button>
 
           <button className="w-full rounded-2xl border border-border/70 bg-card px-8 py-10 text-left shadow-[var(--shadow-card)] transition-transform active:scale-[0.99]">
-            <VehiclesIcon className="h-8 w-[52px] text-foreground/70" />
+            <img src={registeredVehiclesIcon.url} alt="" className="h-10 w-auto" />
             <p className="mt-6 text-[19px] font-semibold">Registered vehicles</p>
           </button>
         </div>
@@ -66,7 +72,7 @@ function Index() {
 
       <nav className="fixed inset-x-0 bottom-0 bg-card">
         <ul className="mx-auto flex max-w-md items-center justify-between px-3 pt-3 pb-6">
-          {navItems.map(({ label, icon: Icon, active }) => (
+          {navItems.map(({ label, icon, active }) => (
             <li key={label} className="w-16">
               <button
                 className={
@@ -76,7 +82,7 @@ function Index() {
                 }
                 aria-current={active ? "page" : undefined}
               >
-                <Icon className="h-7 w-7" strokeWidth={active ? 2.4 : 2} />
+                <img src={icon} alt="" className="h-7 w-auto" />
                 <span className={active ? "text-sm font-semibold" : "text-sm"}>{label}</span>
               </button>
             </li>
