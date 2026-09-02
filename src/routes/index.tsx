@@ -27,13 +27,6 @@ export const Route = createFileRoute("/")({
   component: Index,
 });
 
-const navItems = [
-  { label: "Home", icon: homeIcon.url, active: true },
-  { label: "Vehicles", icon: vehiclesIcon.url, active: false },
-  { label: "Licence", icon: licenceIcon.url, active: false },
-  { label: "Payments", icon: paymentsIcon.url, active: false },
-  { label: "Profile", icon: profileIcon.url, active: false },
-];
 
 function Index() {
   return (
