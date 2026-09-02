@@ -1,13 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
-import {
-  Car,
-  CircleDollarSign,
-  CreditCard,
-  Gauge,
-  Home,
-  Maximize2,
-  User,
-} from "lucide-react";
+import { Car, CircleDollarSign, CreditCard, Maximize2, User } from "lucide-react";
+import { DemeritIcon, HomeMarkIcon, VehiclesIcon } from "@/components/app-icons";
+
 
 export const Route = createFileRoute("/")({
   head: () => ({
