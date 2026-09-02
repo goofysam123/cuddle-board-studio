@@ -47,12 +47,12 @@ function Index() {
 
         <div className="mt-10 space-y-7">
           <button className="w-full rounded-2xl border border-border/70 bg-card px-8 py-10 text-left shadow-[var(--shadow-card)] transition-transform active:scale-[0.99]">
-            <img src={demeritIcon.url} alt="" className="h-8 w-auto" />
+            <img src={demeritIcon.url} alt="" className="h-auto w-9" />
             <p className="mt-6 text-[19px] font-semibold">Demerit point balance</p>
           </button>
 
           <button className="w-full rounded-2xl border border-border/70 bg-card px-8 py-10 text-left shadow-[var(--shadow-card)] transition-transform active:scale-[0.99]">
-            <img src={registeredVehiclesIcon.url} alt="" className="h-10 w-auto" />
+            <img src={registeredVehiclesIcon.url} alt="" className="h-auto w-[42px]" />
             <p className="mt-6 text-[19px] font-semibold">Registered vehicles</p>
           </button>
         </div>
@@ -82,7 +82,7 @@ function Index() {
                 }
                 aria-current={active ? "page" : undefined}
               >
-                <img src={icon} alt="" className="h-7 w-auto" />
+                <img src={icon} alt="" className="h-5 w-auto" />
                 <span className={active ? "text-sm font-semibold" : "text-sm"}>{label}</span>
               </button>
             </li>
