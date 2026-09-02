@@ -64,20 +64,20 @@ function Index() {
       </main>
 
 
-      <nav className="fixed inset-x-0 bottom-0 border-t border-border bg-card">
-        <ul className="mx-auto flex max-w-md items-center justify-between px-4 py-3">
+      <nav className="fixed inset-x-0 bottom-0 bg-card">
+        <ul className="mx-auto flex max-w-md items-center justify-between px-3 pt-3 pb-6">
           {navItems.map(({ label, icon: Icon, active }) => (
-            <li key={label}>
+            <li key={label} className="w-16">
               <button
                 className={
                   active
-                    ? "flex flex-col items-center gap-1.5 text-primary"
-                    : "flex flex-col items-center gap-1.5 text-muted-foreground"
+                    ? "flex w-full flex-col items-center gap-2 text-primary"
+                    : "flex w-full flex-col items-center gap-2 text-foreground/70"
                 }
                 aria-current={active ? "page" : undefined}
               >
-                <Icon className="h-6 w-6" strokeWidth={active ? 2.4 : 1.8} />
-                <span className={active ? "text-xs font-semibold" : "text-xs"}>{label}</span>
+                <Icon className="h-7 w-7" strokeWidth={active ? 2.4 : 2} />
+                <span className={active ? "text-sm font-semibold" : "text-sm"}>{label}</span>
               </button>
             </li>
           ))}
