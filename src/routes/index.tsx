@@ -1,13 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
-import {
-  Car,
-  CircleDollarSign,
-  CreditCard,
-  Gauge,
-  Home,
-  Maximize2,
-  User,
-} from "lucide-react";
+import { Car, CircleDollarSign, CreditCard, Maximize2, User } from "lucide-react";
+import { DemeritIcon, HomeMarkIcon, VehiclesIcon } from "@/components/app-icons";
+
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -32,7 +26,7 @@ export const Route = createFileRoute("/")({
 });
 
 const navItems = [
-  { label: "Home", icon: Home, active: true },
+  { label: "Home", icon: HomeMarkIcon, active: true },
   { label: "Vehicles", icon: Car, active: false },
   { label: "Licence", icon: CreditCard, active: false },
   { label: "Payments", icon: CircleDollarSign, active: false },
@@ -42,47 +36,48 @@ const navItems = [
 function Index() {
   return (
     <div className="min-h-screen bg-background text-foreground">
-      <main className="mx-auto flex min-h-screen w-full max-w-md flex-col px-5 pt-10 pb-32">
-        <h1 className="text-4xl font-bold tracking-tight">Hi Samier</h1>
+      <main className="mx-auto flex min-h-screen w-full max-w-md flex-col px-5 pt-14 pb-28">
+        <h1 className="text-[38px] font-bold tracking-tight leading-tight">Hi Samier</h1>
 
-        <div className="mt-8 space-y-4">
-          <button className="w-full rounded-2xl bg-card p-6 text-left shadow-[var(--shadow-card)] transition-transform active:scale-[0.99]">
-            <Gauge className="h-9 w-9 text-primary" strokeWidth={2} />
-            <p className="mt-5 text-xl font-medium">Demerit point balance</p>
+        <div className="mt-10 space-y-7">
+          <button className="w-full rounded-2xl border border-border/70 bg-card px-8 py-10 text-left shadow-[var(--shadow-card)] transition-transform active:scale-[0.99]">
+            <DemeritIcon className="h-6 w-12 text-foreground/70" />
+            <p className="mt-6 text-[19px] font-semibold">Demerit point balance</p>
           </button>
 
-          <button className="w-full rounded-2xl bg-card p-6 text-left shadow-[var(--shadow-card)] transition-transform active:scale-[0.99]">
-            <Car className="h-9 w-9 text-primary" strokeWidth={2} />
-            <p className="mt-5 text-xl font-medium">Registered vehicles</p>
+          <button className="w-full rounded-2xl border border-border/70 bg-card px-8 py-10 text-left shadow-[var(--shadow-card)] transition-transform active:scale-[0.99]">
+            <VehiclesIcon className="h-8 w-[52px] text-foreground/70" />
+            <p className="mt-6 text-[19px] font-semibold">Registered vehicles</p>
           </button>
         </div>
 
         <div className="flex-1" />
 
         <button
-          className="relative mt-10 w-full overflow-hidden rounded-2xl p-6 pb-12 text-left text-licence-foreground shadow-[var(--shadow-card)]"
+          className="relative -mx-5 -mb-28 mt-10 w-[calc(100%+40px)] overflow-hidden rounded-t-2xl p-6 pb-24 text-left text-licence-foreground"
           style={{ backgroundImage: "var(--gradient-licence)" }}
         >
-          <Maximize2 className="absolute right-6 top-6 h-5 w-5 opacity-90" />
+          <Maximize2 className="absolute right-6 top-6 h-5 w-5 opacity-90" strokeWidth={2.5} />
           <p className="text-2xl font-semibold">My licence</p>
-          <p className="mt-1 text-base opacity-85">Tap to view licence</p>
+          <p className="mt-1 text-lg font-medium opacity-85">Tap to view licence</p>
         </button>
       </main>
 
-      <nav className="fixed inset-x-0 bottom-0 border-t border-border bg-card">
-        <ul className="mx-auto flex max-w-md items-center justify-between px-4 py-3">
+
+      <nav className="fixed inset-x-0 bottom-0 bg-card">
+        <ul className="mx-auto flex max-w-md items-center justify-between px-3 pt-3 pb-6">
           {navItems.map(({ label, icon: Icon, active }) => (
-            <li key={label}>
+            <li key={label} className="w-16">
               <button
                 className={
                   active
-                    ? "flex flex-col items-center gap-1.5 text-primary"
-                    : "flex flex-col items-center gap-1.5 text-muted-foreground"
+                    ? "flex w-full flex-col items-center gap-2 text-primary"
+                    : "flex w-full flex-col items-center gap-2 text-foreground/70"
                 }
                 aria-current={active ? "page" : undefined}
               >
-                <Icon className="h-6 w-6" strokeWidth={active ? 2.4 : 1.8} />
-                <span className={active ? "text-xs font-semibold" : "text-xs"}>{label}</span>
+                <Icon className="h-7 w-7" strokeWidth={active ? 2.4 : 2} />
+                <span className={active ? "text-sm font-semibold" : "text-sm"}>{label}</span>
               </button>
             </li>
           ))}
